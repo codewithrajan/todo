@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App - {{todo.title}}</title>
+</head>
+<body>
+  <h1>{{todo.title}}</h1>
+  <p>{{todo.description}}</p>
+  <p>Status: {{#if todo.completed}}Completed{{else}}Incomplete{{/if}}</p>
+  <a href="/todos/{{todo._id}}/edit">Edit</a>
+  <form action="/todos/{{todo._id}}/delete" method="post" style="display:inline;">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+    {{!-- <button type="submit">Delete</button> --}}
+  </form>
+  <a href="/todos">Back To Index Page</a>
+</body>
+</html>
